@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arup Rahman | Portfolio</title>
+
+    <!-- Favicon (Tab Icon) -->
+    <link rel="icon" type="image/x-icon" href="https://github.com/oruprahman.png">
+
+    <!-- Open Graph Tags (Social Media Preview) -->
+    <meta property="og:title" content="Arup Rahman | Portfolio">
+    <meta property="og:description" content="CSE Student at NUB, Research Enthusiast, and Aspiring Software Engineer.">
+    <meta property="og:image" content="https://github.com/oruprahman.png">
+    <meta property="og:url" content="https://oruprahman.github.io/">
+    <meta property="og:type" content="website">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0f1c;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 15, 28, 0.95);
+            border-bottom: 1px solid #1e293b;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 75px);
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            color: #94a3b8;
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            max-width: 700px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: 1px solid #38bdf8;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .primary {
+            background: #38bdf8;
+            color: #07111f;
+        }
+
+        .secondary {
+            color: #38bdf8;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+        }
+
+        /* SECTIONS */
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 90px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            margin-bottom: 8px;
+        }
+
+        .section-title span {
+            color: #38bdf8;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+        /* ABOUT */
+        .about {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 15px;
+            padding: 35px;
+        }
+
+        .about p {
+            color: #cbd5e1;
+            margin-bottom: 18px;
+        }
+
+        /* SKILLS */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 15px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px);
+            border-color: #38bdf8;
+        }
+
+        .skill-card h3 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #1e293b;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .project {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 15px;
+            padding: 28px;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project:hover {
+            transform: translateY(-7px);
+            border-color: #38bdf8;
+        }
+
+        .project h3 {
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .tech {
+            color: #38bdf8;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .project-link {
+            font-size: 13px;
+            padding: 6px 12px;
+            border: 1px solid #38bdf8;
+            border-radius: 6px;
+            color: #38bdf8;
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            background: #38bdf8;
+            color: #07111f;
+        }
+
+        /* RESEARCH */
+        .research {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .research p {
+            color: #94a3b8;
+            margin-bottom: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .interests {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .interest {
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+            padding: 10px 18px;
+            border-radius: 25px;
+        }
+
+        /* EDUCATION */
+        .education {
+            background: #111827;
+            border-left: 4px solid #38bdf8;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .education p {
+            color: #94a3b8;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 15px;
+            padding: 45px 25px;
+        }
+
+        .contact p {
+            color: #94a3b8;
+        }
+
+        .contact-links {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-link {
+            border: 1px solid #334155;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+            transform: translateY(-3px);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #1e293b;
+            color: #64748b;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+
+            .about {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                Arup<span>.</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hi, I'm <span>Arup Rahman</span></h1>
+            <h2>CSE Student | Research Enthusiast | Aspiring Software Engineer</h2>
+            <p>
+                Computer Science and Engineering student interested in cybersecurity, software engineering, research, and technology.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn primary">View My Projects</a>
+                <a href="https://github.com/oruprahman" target="_blank" class="btn secondary">GitHub</a>
+                <!-- Resume Download Button -->
+                <a href="resume.pdf" download class="btn secondary">Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="section-title">
+            <h2>About <span>Me</span></h2>
+            <p>Get to know me</p>
+        </div>
+
+        <div class="about">
+            <p>
+                I am a Computer Science and Engineering student at Northern University Bangladesh. I am currently involved in research under academic supervision, which is helping me learn how to approach technical problems, read research papers, and explore topics in a more structured way.
+            </p>
+            <p>
+                Alongside my academic work, I am interested in building a career in the tech industry, especially in cybersecurity and software engineering. I enjoy learning new technologies, improving my programming and problem-solving skills, and exploring how technical knowledge can be applied in practical, real-world environments.
+            </p>
+            <p>
+                I am open to learning, collaboration, and connecting with people interested in cybersecurity, software engineering, research, and technology.
+            </p>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="section-title">
+            <h2>My <span>Skills</span></h2>
+            <p>Technologies and abilities</p>
+        </div>
+
+        <div class="skills">
+            <div class="skill-card">
+                <h3>Programming Languages</h3>
+                <div class="tags">
+                    <span class="tag">C</span>
+                    <span class="tag">C++</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Tools & Platforms</h3>
+                <div class="tags">
+                    <span class="tag">GitHub</span>
+                    <span class="tag">VS Code</span>
+                    <span class="tag">Code::Blocks</span>
+                    <span class="tag">MySQL Workbench</span>
+                    <span class="tag">Logisim</span>
+                    <span class="tag">Tinkercad</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Microsoft Office</h3>
+                <div class="tags">
+                    <span class="tag">Word</span>
+                    <span class="tag">Excel</span>
+                    <span class="tag">PowerPoint</span>
+                </div>
+                <br>
+                <small>Certified by UVTR Academy</small>
+            </div>
+
+            <div class="skill-card">
+                <h3>Concepts</h3>
+                <div class="tags">
+                    <span class="tag">Digital Logic Design</span>
+                    <span class="tag">Digital Pulse Technique</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Soft Skills</h3>
+                <div class="tags">
+                    <span class="tag">Communication</span>
+                    <span class="tag">Teamwork</span>
+                    <span class="tag">Leadership</span>
+                    <span class="tag">Time Management</span>
+                    <span class="tag">Adaptability</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="section-title">
+            <h2>Academic <span>Projects</span></h2>
+            <p>My academic work and practical experience</p>
+        </div>
+
+        <div class="projects">
+            <div class="project">
+                <div>
+                    <h3>Hospital Appointment Management System</h3>
+                    <p>Developed a C++ based Hospital Appointment Management System as part of the Software Development course.</p>
+                </div>
+                <div>
+                    <div class="tech">C++ • Software Development</div>
+                    <div class="project-links">
+                        <a href="https://github.com/oruprahman" target="_blank" class="project-link">View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project">
+                <div>
+                    <h3>Digital Logic Circuit Design</h3>
+                    <p>Designed and simulated digital logic circuits using Logisim as part of the Digital Logic Design course.</p>
+                </div>
+                <div>
+                    <div class="tech">Logisim • Digital Logic</div>
+                    <div class="project-links">
+                        <a href="https://github.com/oruprahman" target="_blank" class="project-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project">
+                <div>
+                    <h3>Digital Circuit Simulation</h3>
+                    <p>Simulated logic gates and digital circuit designs using Tinkercad as part of the Digital Electronics & Pulse Technique course.</p>
+                </div>
+                <div>
+                    <div class="tech">Tinkercad • Digital Electronics</div>
+                    <div class="project-links">
+                        <a href="https://github.com/oruprahman" target="_blank" class="project-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project">
+                <div>
+                    <h3>Microsoft Office Training</h3>
+                    <p>Completed professional training in Microsoft Word, Excel, and PowerPoint from UVTR Academy.</p>
+                </div>
+                <div>
+                    <div class="tech">Word • Excel • PowerPoint</div>
+                    <div class="project-links">
+                        <span class="project-link" style="opacity: 0.7; cursor: default;">Certified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research">
+        <div class="section-title">
+            <h2>Research <span>Interests</span></h2>
+            <p>Areas I am actively exploring and passionate about</p>
+        </div>
+
+        <div class="research">
+            <p>
+                I am passionate about tackling technical challenges through structured research and practical computing solutions. My current academic focus centers on analyzing software system architectures, cybersecurity mechanisms, and exploring modern computing paradigms.
+            </p>
+
+            <div class="interests">
+                <span class="interest">Cybersecurity</span>
+                <span class="interest">Software Engineering</span>
+                <span class="interest">Research Methodology</span>
+                <span class="interest">Applied Technology</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+        <div class="section-title">
+            <h2>My <span>Education</span></h2>
+        </div>
+
+        <div class="education">
+            <h3>BSc in Computer Science & Engineering</h3>
+            <p>Northern University Bangladesh</p>
+            <p>Department of Computer Science & Engineering</p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Let's <span>Connect</span></h2>
+            <p>Feel free to connect with me</p>
+        </div>
+
+        <div class="contact">
+            <p>I am open to learning, collaboration, research, and opportunities in technology.</p>
+
+            <div class="contact-links">
+                <a href="mailto:oruprahmanoni@gmail.com" class="contact-link">Email</a>
+                <a href="https://github.com/oruprahman" target="_blank" class="contact-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/arup-rahman-5aa02a374" target="_blank" class="contact-link">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Arup Rahman. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
