@@ -8,6 +8,33 @@
     <title>Arup Rahman | Portfolio</title>
 
     <style>
+        /* COLOR VARIABLES FOR LIGHT/DARK MODE */
+        :root {
+            --bg-main: #0a0f1c;
+            --bg-card: #111827;
+            --bg-inner: #0a0f1c;
+            --text-main: #e5e7eb;
+            --text-muted: #94a3b8;
+            --border-color: #1e293b;
+            --primary-accent: #38bdf8;
+            --nav-bg: rgba(10, 15, 28, 0.95);
+            --tag-bg: #1e293b;
+            --shadow-color: rgba(56, 189, 248, 0.4);
+        }
+
+        [data-theme="light"] {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-inner: #f1f5f9;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+            --primary-accent: #0284c7;
+            --nav-bg: rgba(248, 250, 252, 0.95);
+            --tag-bg: #e2e8f0;
+            --shadow-color: rgba(2, 132, 199, 0.25);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -17,9 +44,10 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #0a0f1c;
-            color: #e5e7eb;
+            background: var(--bg-main);
+            color: var(--text-main);
             line-height: 1.6;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         a {
@@ -33,47 +61,65 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 15, 28, 0.95);
-            border-bottom: 1px solid #1e293b;
+            background: var(--nav-bg);
+            border-bottom: 1px solid var(--border-color);
             z-index: 1000;
+            transition: background 0.3s ease;
         }
 
         .nav-container {
             max-width: 1100px;
             margin: auto;
-            padding: 18px 25px;
-
+            padding: 15px 25px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             list-style: none;
         }
 
         .nav-links a {
-            color: #cbd5e1;
+            color: var(--text-muted);
             transition: 0.3s;
         }
 
         .nav-links a:hover {
-            color: #38bdf8;
+            color: var(--primary-accent);
+        }
+
+        /* THEME TOGGLE BUTTON */
+
+        .theme-toggle-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.3s;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--primary-accent);
+            color: var(--primary-accent);
         }
 
         /* HERO */
 
         .hero {
             min-height: 100vh;
-
             display: flex;
             justify-content: center;
             align-items: center;
-
             text-align: center;
-
             padding: 110px 20px 50px;
         }
 
@@ -93,8 +139,8 @@
             height: 170px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #38bdf8;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+            border: 3px solid var(--primary-accent);
+            box-shadow: 0 0 25px var(--shadow-color);
             transition: transform 0.3s ease;
         }
 
@@ -108,18 +154,18 @@
         }
 
         .hero h1 span {
-            color: #38bdf8;
+            color: var(--primary-accent);
         }
 
         .hero h2 {
             font-size: 25px;
-            color: #94a3b8;
+            color: var(--text-muted);
             font-weight: normal;
             margin-bottom: 25px;
         }
 
         .hero p {
-            color: #94a3b8;
+            color: var(--text-muted);
             max-width: 700px;
             margin: auto;
             font-size: 17px;
@@ -127,29 +173,27 @@
 
         .buttons {
             margin-top: 30px;
-
             display: flex;
             justify-content: center;
             gap: 15px;
-
             flex-wrap: wrap;
         }
 
         .btn {
             padding: 12px 25px;
             border-radius: 8px;
-            border: 1px solid #38bdf8;
+            border: 1px solid var(--primary-accent);
             font-weight: bold;
             transition: 0.3s;
         }
 
         .primary {
-            background: #38bdf8;
+            background: var(--primary-accent);
             color: #07111f;
         }
 
         .secondary {
-            color: #38bdf8;
+            color: var(--primary-accent);
         }
 
         .btn:hover {
@@ -175,24 +219,24 @@
         }
 
         .section-title span {
-            color: #38bdf8;
+            color: var(--primary-accent);
         }
 
         .section-title p {
-            color: #64748b;
+            color: var(--text-muted);
         }
 
         /* ABOUT */
 
         .about {
-            background: #111827;
-            border: 1px solid #1e293b;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             border-radius: 15px;
             padding: 35px;
         }
 
         .about p {
-            color: #cbd5e1;
+            color: var(--text-main);
             margin-bottom: 18px;
         }
 
@@ -205,8 +249,8 @@
         }
 
         .skill-card {
-            background: #111827;
-            border: 1px solid #1e293b;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             border-radius: 15px;
             padding: 25px;
             transition: 0.3s;
@@ -214,11 +258,11 @@
 
         .skill-card:hover {
             transform: translateY(-6px);
-            border-color: #38bdf8;
+            border-color: var(--primary-accent);
         }
 
         .skill-card h3 {
-            color: #38bdf8;
+            color: var(--primary-accent);
             margin-bottom: 15px;
         }
 
@@ -229,7 +273,7 @@
         }
 
         .tag {
-            background: #1e293b;
+            background: var(--tag-bg);
             padding: 7px 12px;
             border-radius: 20px;
             font-size: 14px;
@@ -244,8 +288,8 @@
         }
 
         .project {
-            background: #111827;
-            border: 1px solid #1e293b;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             border-radius: 15px;
             padding: 28px;
             transition: 0.3s;
@@ -253,7 +297,7 @@
 
         .project:hover {
             transform: translateY(-7px);
-            border-color: #38bdf8;
+            border-color: var(--primary-accent);
         }
 
         .project h3 {
@@ -261,12 +305,12 @@
         }
 
         .project p {
-            color: #94a3b8;
+            color: var(--text-muted);
             margin-bottom: 15px;
         }
 
         .tech {
-            color: #38bdf8;
+            color: var(--primary-accent);
             font-size: 14px;
         }
 
@@ -275,7 +319,7 @@
         .project-link {
             display: inline-block;
             margin-top: 15px;
-            color: #38bdf8;
+            color: var(--primary-accent);
             font-weight: bold;
             transition: 0.3s;
         }
@@ -289,29 +333,29 @@
             width: 6px;
         }
         .circuit-scroll-box::-webkit-scrollbar-track {
-            background: #0a0f1c;
+            background: var(--bg-inner);
             border-radius: 10px;
         }
         .circuit-scroll-box::-webkit-scrollbar-thumb {
-            background: #38bdf8;
+            background: var(--primary-accent);
             border-radius: 10px;
         }
 
         /* RESEARCH */
 
         .research {
-            background: #111827;
-            border: 1px solid #1e293b;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             border-radius: 15px;
             padding: 40px;
         }
 
         .research-card {
             text-align: left;
-            background: #0a0f1c;
+            background: var(--bg-inner);
             padding: 30px;
             border-radius: 12px;
-            border: 1px solid #1e293b;
+            border: 1px solid var(--border-color);
             margin-bottom: 35px;
         }
 
@@ -326,16 +370,16 @@
 
         .research-badge {
             background: rgba(56, 189, 248, 0.15);
-            color: #38bdf8;
+            color: var(--primary-accent);
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 13px;
             font-weight: bold;
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            border: 1px solid var(--primary-accent);
         }
 
         .research-list {
-            color: #94a3b8;
+            color: var(--text-muted);
             padding-left: 20px;
             font-size: 15px;
             display: flex;
@@ -351,8 +395,8 @@
         }
 
         .interest {
-            border: 1px solid #38bdf8;
-            color: #38bdf8;
+            border: 1px solid var(--primary-accent);
+            color: var(--primary-accent);
             padding: 10px 18px;
             border-radius: 25px;
         }
@@ -360,10 +404,13 @@
         /* EDUCATION */
 
         .education {
-            background: #111827;
-            border-left: 4px solid #38bdf8;
+            background: var(--bg-card);
+            border-left: 4px solid var(--primary-accent);
             padding: 28px;
             border-radius: 10px;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .education-header {
@@ -376,31 +423,30 @@
 
         .edu-badge {
             background: rgba(56, 189, 248, 0.1);
-            color: #38bdf8;
+            color: var(--primary-accent);
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 14px;
             font-weight: bold;
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            border: 1px solid var(--primary-accent);
         }
 
         /* CONTACT */
 
         .contact {
             text-align: center;
-            background: #111827;
-            border: 1px solid #1e293b;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             border-radius: 15px;
             padding: 45px 25px;
         }
 
         .contact p {
-            color: #94a3b8;
+            color: var(--text-muted);
         }
 
         .contact-links {
             margin-top: 25px;
-
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -408,15 +454,15 @@
         }
 
         .contact-link {
-            border: 1px solid #334155;
+            border: 1px solid var(--border-color);
             padding: 12px 20px;
             border-radius: 8px;
             transition: 0.3s;
         }
 
         .contact-link:hover {
-            border-color: #38bdf8;
-            color: #38bdf8;
+            border-color: var(--primary-accent);
+            color: var(--primary-accent);
             transform: translateY(-3px);
         }
 
@@ -434,9 +480,9 @@
             padding: 13px 15px;
             margin-bottom: 15px;
             border-radius: 8px;
-            border: 1px solid #3334155;
-            background: #0a0f1c;
-            color: #e5e7eb;
+            border: 1px solid var(--border-color);
+            background: var(--bg-inner);
+            color: var(--text-main);
             font-family: Arial, sans-serif;
             font-size: 15px;
             outline: none;
@@ -444,7 +490,7 @@
 
         .message-form input:focus,
         .message-form textarea:focus {
-            border-color: #38bdf8;
+            border-color: var(--primary-accent);
         }
 
         .message-form textarea {
@@ -457,7 +503,7 @@
             padding: 13px;
             border: none;
             border-radius: 8px;
-            background: #38bdf8;
+            background: var(--primary-accent);
             color: #07111f;
             font-weight: bold;
             font-size: 15px;
@@ -474,14 +520,13 @@
         footer {
             text-align: center;
             padding: 30px;
-            border-top: 1px solid #1e293b;
-            color: #64748b;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
         }
 
         /* MOBILE */
 
         @media (max-width: 700px) {
-
             .nav-links {
                 display: none;
             }
@@ -507,8 +552,6 @@
 
 
 <body>
-
-    <!-- NAVIGATION -->
 
     <nav>
 
@@ -546,18 +589,20 @@
 
             </ul>
 
+            <button class="theme-toggle-btn" id="theme-toggle" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span>
+                <span id="theme-text">Dark</span>
+            </button>
+
         </div>
 
     </nav>
 
 
-    <!-- HERO -->
-
     <section class="hero" id="home">
 
         <div class="hero-content">
 
-            <!-- PROFILE IMAGE FROM DRIVE -->
             <div class="profile-img-box">
                 <img src="https://lh3.googleusercontent.com/d/1qnJmwgfK2QXchjCsqTmXuQ6RX-MMxghY" alt="Arup Rahman" class="profile-img">
             </div>
@@ -611,8 +656,6 @@
     </section>
 
 
-    <!-- ABOUT -->
-
     <section id="about">
 
         <div class="section-title">
@@ -657,8 +700,6 @@
 
     </section>
 
-
-    <!-- SKILLS -->
 
     <section id="skills">
 
@@ -825,8 +866,6 @@
     </section>
 
 
-    <!-- PROJECTS -->
-
     <section id="projects">
 
         <div class="section-title">
@@ -908,8 +947,6 @@
             </div>
 
 
-            <!-- DIGITAL CIRCUIT SIMULATIONS (FIXED SCROLLABLE BOX FOR 16 LABS) -->
-
             <div class="project" style="grid-column: 1 / -1;">
 
                 <h3>
@@ -924,79 +961,78 @@
                     Tinkercad • Digital Electronics • Logic Design
                 </div>
 
-                <div style="background: #0a0f1c; padding: 18px; border-radius: 10px; border: 1px solid #1e293b;">
+                <div style="background: var(--bg-inner); padding: 18px; border-radius: 10px; border: 1px solid var(--border-color);">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                        <h4 style="color: #38bdf8; font-size: 15px;">
+                        <h4 style="color: var(--primary-accent); font-size: 15px;">
                             Lab Simulations (16 Items):
                         </h4>
-                        <small style="color: #64748b; font-size: 12px;">Scroll inside box to see more ↓</small>
+                        <small style="color: var(--text-muted); font-size: 12px;">Scroll inside box to see more ↓</small>
                     </div>
 
-                    <!-- SCROLLABLE CONTAINER -->
                     <div class="circuit-scroll-box" style="max-height: 250px; overflow-y: auto; padding-right: 8px;">
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px;">
                             
-                            <a href="https://www.tinkercad.com/things/kdKkrD2D0V1-lab-141240302559-and-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/kdKkrD2D0V1-lab-141240302559-and-gate" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 1: AND Gate
                             </a>
 
-                            <a href="https://www.tinkercad.com/things/jrbiNd2HX3H-lab-141240302559-inverter" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/jrbiNd2HX3H-lab-141240302559-inverter" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 1: Inverter
                             </a>
 
-                            <a href="https://www.tinkercad.com/things/lcgJUloyVRB-lab-241240302559-drl-and-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/lcgJUloyVRB-lab-241240302559-drl-and-gate" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 2: DRL AND Gate
                             </a>
 
-                            <a href="https://www.tinkercad.com/things/dPTvYrjaKNv-lab-241240302559rtl-not-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/dPTvYrjaKNv-lab-241240302559rtl-not-gate" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 2: RTL NOT Gate
                             </a>
 
-                            <a href="https://www.tinkercad.com/things/0rLorhwAejX-lab-241240302559drl-or-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/0rLorhwAejX-lab-241240302559drl-or-gate" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 2: DRL OR Gate
                             </a>
 
-                            <a href="https://www.tinkercad.com/things/l9B0SmtJXKq-lab-341240302559dtl-not-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/l9B0SmtJXKq-lab-341240302559dtl-not-gate" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 3: DTL NOT Gate
                             </a>
 
-                            <a href="https://www.tinkercad.com/things/0rvGm9djp1N-lab-341240302559dtl-nand-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/0rvGm9djp1N-lab-341240302559dtl-nand-gate" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 3: DTL NAND Gate
                             </a>
 
-                            <a href="https://www.tinkercad.com/things/95ie6fXO9Gc-lab-341240302559rtl-nor-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/95ie6fXO9Gc-lab-341240302559rtl-nor-gate" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 3: RTL NOR Gate
                             </a>
 
-                            <a href="https://www.tinkercad.com/things/7kB4vyuF7UZ-lab-341240302559dtl-nor-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/7kB4vyuF7UZ-lab-341240302559dtl-nor-gate" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 3: DTL NOR Gate
                             </a>
 
-                            <a href="https://www.tinkercad.com/things/bNbiiZsM0oA-lab-441240302559ttl-not-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/bNbiiZsM0oA-lab-441240302559ttl-not-gate" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 4: TTL NOT Gate
                             </a>
 
-                            <a href="https://www.tinkercad.com/things/5Y20S3Xb90q-lab-441240302559ttl-nor-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/5Y20S3Xb90q-lab-441240302559ttl-nor-gate" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 4: TTL NOR Gate
                             </a>
 
-                            <a href="https://www.tinkercad.com/things/eumgZe9gYvZ-lab-541240302559positive-clipper" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/eumgZe9gYvZ-lab-541240302559positive-clipper" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 5: Positive Clipper
                             </a>
 
-                            <a href="https://www.tinkercad.com/things/h9B6EHNkfU0-lab-541240302559negative-clipper" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/h9B6EHNkfU0-lab-541240302559negative-clipper" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 5: Negative Clipper
                             </a>
 
-                            <a href="https://www.tinkercad.com/things/aOUDvtJv88d-lab-641240302559sr-flip-flop" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/aOUDvtJv88d-lab-641240302559sr-flip-flop" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 6: SR Flip-Flop
                             </a>
 
-                            <a href="https://www.tinkercad.com/things/jjD2z2RIrev-lab-641240302559-d-flip-flop" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/jjD2z2RIrev-lab-641240302559-d-flip-flop" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 6: D Flip-Flop
                             </a>
 
-                            <a href="https://www.tinkercad.com/things/lTfRhUX4QUl-lab-741240302559-4bit-register-with-d-flip-flop" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                            <a href="https://www.tinkercad.com/things/lTfRhUX4QUl-lab-741240302559-4bit-register-with-d-flip-flop" target="_blank" style="color: var(--text-main); font-size: 14px; padding: 8px 12px; background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); display: block; transition: 0.3s;">
                                 🔗 Lab 7: 4-bit Register
                             </a>
 
@@ -1010,8 +1046,6 @@
 
     </section>
 
-
-    <!-- RESEARCH -->
 
     <section id="research">
 
@@ -1030,12 +1064,10 @@
 
         <div class="research">
 
-            <!-- ONGOING RESEARCH CARD -->
-
             <div class="research-card">
 
                 <div class="research-header">
-                    <h3 style="color: #38bdf8; font-size: 22px;">
+                    <h3 style="color: var(--primary-accent); font-size: 22px;">
                         Mathematical Modeling of Measles in Dhaka, Bangladesh
                     </h3>
                     <span class="research-badge">
@@ -1043,8 +1075,8 @@
                     </span>
                 </div>
 
-                <p style="color: #cbd5e1; font-weight: 500; margin-bottom: 18px; font-size: 15px;">
-                    Under the supervision of <strong style="color: #e5e7eb;">Ali Ahmed</strong>, Lecturer, Department of CSE, Northern University Bangladesh
+                <p style="color: var(--text-main); font-weight: 500; margin-bottom: 18px; font-size: 15px;">
+                    Under the supervision of <strong>Ali Ahmed</strong>, Lecturer, Department of CSE, Northern University Bangladesh
                 </p>
 
                 <ul class="research-list">
@@ -1062,9 +1094,7 @@
             </div>
 
 
-            <!-- RESEARCH INTERESTS TAGS -->
-
-            <h3 style="color: #cbd5e1; margin-bottom: 18px; font-size: 18px; text-align: center;">
+            <h3 style="color: var(--text-main); margin-bottom: 18px; font-size: 18px; text-align: center;">
                 Research Interests
             </h3>
 
@@ -1093,8 +1123,6 @@
     </section>
 
 
-    <!-- EDUCATION -->
-
     <section id="education">
 
         <div class="section-title">
@@ -1115,15 +1143,15 @@
             <div class="education-header">
 
                 <div>
-                    <h3 style="color: #38bdf8; font-size: 20px; margin-bottom: 6px;">
+                    <h3 style="color: var(--primary-accent); font-size: 20px; margin-bottom: 6px;">
                         Bachelor of Science (BSc) in Computer Science and Engineering
                     </h3>
 
-                    <p style="color: #e5e7eb; font-weight: 500; font-size: 16px;">
+                    <p style="color: var(--text-main); font-weight: 500; font-size: 16px;">
                         Northern University Bangladesh (NUB)
                     </p>
 
-                    <p style="color: #94a3b8; font-size: 14px; margin-top: 4px;">
+                    <p style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">
                         Department of Computer Science & Engineering
                     </p>
                 </div>
@@ -1140,8 +1168,6 @@
 
     </section>
 
-
-    <!-- CONTACT -->
 
     <section id="contact">
 
@@ -1191,8 +1217,6 @@
             </div>
 
 
-            <!-- MESSAGE FORM -->
-
             <form
                 action="https://formspree.io/f/mppaevzg"
                 method="POST"
@@ -1228,8 +1252,6 @@
     </section>
 
 
-    <!-- FOOTER -->
-
     <footer>
 
         <p>
@@ -1237,6 +1259,42 @@
         </p>
 
     </footer>
+
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const themeText = document.getElementById('theme-text');
+
+        // Check for saved theme in localStorage
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            themeIcon.textContent = '☀️';
+            themeText.textContent = 'Light';
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.textContent = '🌙';
+            themeText.textContent = 'Dark';
+        }
+
+        function toggleTheme() {
+            let theme = document.documentElement.getAttribute('data-theme');
+
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Dark';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Light';
+            }
+        }
+    </script>
 
 </body>
 </html>
