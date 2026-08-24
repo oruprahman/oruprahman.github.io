@@ -162,6 +162,19 @@
             color: var(--text-muted);
             font-weight: normal;
             margin-bottom: 25px;
+            min-height: 38px;
+        }
+
+        /* DYNAMIC TYPING CURSOR */
+        .typing-cursor {
+            color: var(--primary-accent);
+            font-weight: bold;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
 
         .hero p {
@@ -553,6 +566,8 @@
 
 <body>
 
+    <!-- NAVIGATION -->
+
     <nav>
 
         <div class="nav-container">
@@ -589,6 +604,7 @@
 
             </ul>
 
+            <!-- THEME TOGGLE BUTTON -->
             <button class="theme-toggle-btn" id="theme-toggle" onclick="toggleTheme()">
                 <span id="theme-icon">🌙</span>
                 <span id="theme-text">Dark</span>
@@ -599,10 +615,13 @@
     </nav>
 
 
+    <!-- HERO -->
+
     <section class="hero" id="home">
 
         <div class="hero-content">
 
+            <!-- PROFILE IMAGE FROM DRIVE -->
             <div class="profile-img-box">
                 <img src="https://lh3.googleusercontent.com/d/1qnJmwgfK2QXchjCsqTmXuQ6RX-MMxghY" alt="Arup Rahman" class="profile-img">
             </div>
@@ -611,9 +630,9 @@
                 I'm <span>Arup Rahman</span>
             </h1>
 
+            <!-- DYNAMIC TYPING H2 -->
             <h2>
-                CSE Student | Research Enthusiast |
-                Aspiring Software Engineer
+                <span id="typing-text" style="color: var(--primary-accent); font-weight: bold;"></span><span class="typing-cursor">|</span>
             </h2>
 
             <p>
@@ -655,6 +674,8 @@
 
     </section>
 
+
+    <!-- ABOUT -->
 
     <section id="about">
 
@@ -700,6 +721,8 @@
 
     </section>
 
+
+    <!-- SKILLS -->
 
     <section id="skills">
 
@@ -866,6 +889,8 @@
     </section>
 
 
+    <!-- PROJECTS -->
+
     <section id="projects">
 
         <div class="section-title">
@@ -947,6 +972,8 @@
             </div>
 
 
+            <!-- DIGITAL CIRCUIT SIMULATIONS (FIXED SCROLLABLE BOX FOR 16 LABS) -->
+
             <div class="project" style="grid-column: 1 / -1;">
 
                 <h3>
@@ -969,6 +996,7 @@
                         <small style="color: var(--text-muted); font-size: 12px;">Scroll inside box to see more ↓</small>
                     </div>
 
+                    <!-- SCROLLABLE CONTAINER -->
                     <div class="circuit-scroll-box" style="max-height: 250px; overflow-y: auto; padding-right: 8px;">
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px;">
                             
@@ -1047,6 +1075,8 @@
     </section>
 
 
+    <!-- RESEARCH -->
+
     <section id="research">
 
         <div class="section-title">
@@ -1063,6 +1093,8 @@
 
 
         <div class="research">
+
+            <!-- ONGOING RESEARCH CARD -->
 
             <div class="research-card">
 
@@ -1094,6 +1126,8 @@
             </div>
 
 
+            <!-- RESEARCH INTERESTS TAGS -->
+
             <h3 style="color: var(--text-main); margin-bottom: 18px; font-size: 18px; text-align: center;">
                 Research Interests
             </h3>
@@ -1122,6 +1156,8 @@
 
     </section>
 
+
+    <!-- EDUCATION -->
 
     <section id="education">
 
@@ -1168,6 +1204,8 @@
 
     </section>
 
+
+    <!-- CONTACT -->
 
     <section id="contact">
 
@@ -1217,6 +1255,8 @@
             </div>
 
 
+            <!-- MESSAGE FORM -->
+
             <form
                 action="https://formspree.io/f/mppaevzg"
                 method="POST"
@@ -1252,6 +1292,8 @@
     </section>
 
 
+    <!-- FOOTER -->
+
     <footer>
 
         <p>
@@ -1261,12 +1303,13 @@
     </footer>
 
 
+    <!-- JAVASCRIPT -->
     <script>
+        // LIGHT / DARK MODE TOGGLE
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const themeText = document.getElementById('theme-text');
 
-        // Check for saved theme in localStorage
         const currentTheme = localStorage.getItem('theme');
 
         if (currentTheme === 'light') {
@@ -1294,6 +1337,46 @@
                 themeText.textContent = 'Light';
             }
         }
+
+        // DYNAMIC TYPING EFFECT
+        const typingText = document.getElementById('typing-text');
+        const words = [
+            "CSE Student",
+            "Research Enthusiast",
+            "Aspiring Software Engineer",
+            "Cybersecurity Enthusiast"
+        ];
+        
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                typeSpeed = 1800; // Pause at end of word
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 400; // Pause before typing next word
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        document.addEventListener('DOMContentLoaded', typeEffect);
     </script>
 
 </body>
