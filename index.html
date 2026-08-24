@@ -263,6 +263,19 @@
             text-decoration: underline;
         }
 
+        /* CUSTOM SCROLLBAR FOR LAB CIRCUITS BOX */
+        .circuit-scroll-box::-webkit-scrollbar {
+            width: 6px;
+        }
+        .circuit-scroll-box::-webkit-scrollbar-track {
+            background: #0a0f1c;
+            border-radius: 10px;
+        }
+        .circuit-scroll-box::-webkit-scrollbar-thumb {
+            background: #38bdf8;
+            border-radius: 10px;
+        }
+
         /* RESEARCH */
 
         .research {
@@ -474,6 +487,8 @@
 
 <body>
 
+    <!-- NAVIGATION -->
+
     <nav>
 
         <div class="nav-container">
@@ -514,6 +529,8 @@
 
     </nav>
 
+
+    <!-- HERO -->
 
     <section class="hero" id="home">
 
@@ -568,6 +585,8 @@
     </section>
 
 
+    <!-- ABOUT -->
+
     <section id="about">
 
         <div class="section-title">
@@ -612,6 +631,8 @@
 
     </section>
 
+
+    <!-- SKILLS -->
 
     <section id="skills">
 
@@ -778,6 +799,8 @@
     </section>
 
 
+    <!-- PROJECTS -->
+
     <section id="projects">
 
         <div class="section-title">
@@ -844,25 +867,6 @@
             <div class="project">
 
                 <h3>
-                    Digital Circuit Simulation
-                </h3>
-
-                <p>
-                    Simulated logic gates and digital circuit designs
-                    using Tinkercad as part of the Digital Electronics
-                    & Pulse Technique course.
-                </p>
-
-                <div class="tech">
-                    Tinkercad • Digital Electronics
-                </div>
-
-            </div>
-
-
-            <div class="project">
-
-                <h3>
                     Microsoft Office Training
                 </h3>
 
@@ -877,10 +881,107 @@
 
             </div>
 
+
+            <!-- DIGITAL CIRCUIT SIMULATIONS (FIXED SCROLLABLE BOX FOR 15 LABS) -->
+
+            <div class="project" style="grid-column: 1 / -1;">
+
+                <h3>
+                    Digital Circuit & Electronics Simulations (Lab Portfolio)
+                </h3>
+
+                <p>
+                    Simulated various logic gates, diode-resistor/transistor-resistor logic, clippers, flip-flops, and sequential circuits using Tinkercad for Digital Electronics & Pulse Technique courses.
+                </p>
+
+                <div class="tech" style="margin-bottom: 15px;">
+                    Tinkercad • Digital Electronics • Logic Design
+                </div>
+
+                <div style="background: #0a0f1c; padding: 18px; border-radius: 10px; border: 1px solid #1e293b;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <h4 style="color: #38bdf8; font-size: 15px;">
+                            Lab Simulations (15 Items):
+                        </h4>
+                        <small style="color: #64748b; font-size: 12px;">Scroll inside box to see more ↓</small>
+                    </div>
+
+                    <!-- SCROLLABLE CONTAINER -->
+                    <div class="circuit-scroll-box" style="max-height: 250px; overflow-y: auto; padding-right: 8px;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px;">
+                            
+                            <a href="https://www.tinkercad.com/things/kdKkrD2D0V1-lab-141240302559-and-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                                🔗 Lab 1: AND Gate
+                            </a>
+
+                            <a href="https://www.tinkercad.com/things/jrbiNd2HX3H-lab-141240302559-inverter" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                                🔗 Lab 1: Inverter
+                            </a>
+
+                            <a href="https://www.tinkercad.com/things/lcgJUloyVRB-lab-241240302559-drl-and-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                                🔗 Lab 2: DRL AND Gate
+                            </a>
+
+                            <a href="https://www.tinkercad.com/things/dPTvYrjaKNv-lab-241240302559rtl-not-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                                🔗 Lab 2: RTL NOT Gate
+                            </a>
+
+                            <a href="https://www.tinkercad.com/things/0rLorhwAejX-lab-241240302559drl-or-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                                🔗 Lab 2: DRL OR Gate
+                            </a>
+
+                            <a href="https://www.tinkercad.com/things/l9B0SmtJXKq-lab-341240302559dtl-not-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                                🔗 Lab 3: DTL NOT Gate
+                            </a>
+
+                            <a href="https://www.tinkercad.com/things/95ie6fXO9Gc-lab-341240302559rtl-nor-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                                🔗 Lab 3: RTL NOR Gate
+                            </a>
+
+                            <a href="https://www.tinkercad.com/things/7kB4vyuF7UZ-lab-341240302559dtl-nor-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                                🔗 Lab 3: DTL NOR Gate
+                            </a>
+
+                            <a href="https://www.tinkercad.com/things/bNbiiZsM0oA-lab-441240302559ttl-not-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                                🔗 Lab 4: TTL NOT Gate
+                            </a>
+
+                            <a href="https://www.tinkercad.com/things/5Y20S3Xb90q-lab-441240302559ttl-nor-gate" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                                🔗 Lab 4: TTL NOR Gate
+                            </a>
+
+                            <a href="https://www.tinkercad.com/things/eumgZe9gYvZ-lab-541240302559positive-clipper" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                                🔗 Lab 5: Positive Clipper
+                            </a>
+
+                            <a href="https://www.tinkercad.com/things/h9B6EHNkfU0-lab-541240302559negative-clipper" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                                🔗 Lab 5: Negative Clipper
+                            </a>
+
+                            <a href="https://www.tinkercad.com/things/aOUDvtJv88d-lab-641240302559sr-flip-flop" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                                🔗 Lab 6: SR Flip-Flop
+                            </a>
+
+                            <a href="https://www.tinkercad.com/things/jjD2z2RIrev-lab-641240302559-d-flip-flop" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                                🔗 Lab 6: D Flip-Flop
+                            </a>
+
+                            <a href="https://www.tinkercad.com/things/lTfRhUX4QUl-lab-741240302559-4bit-register-with-d-flip-flop" target="_blank" style="color: #cbd5e1; font-size: 14px; padding: 8px 12px; background: #111827; border-radius: 6px; border: 1px solid #1e293b; display: block; transition: 0.3s;" onmouseover="this.style.color='#38bdf8'; this.style.borderColor='#38bdf8';" onmouseout="this.style.color='#cbd5e1'; this.style.borderColor='#1e293b';">
+                                🔗 Lab 7: 4-bit Register
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
     </section>
 
+
+    <!-- RESEARCH -->
 
     <section id="research">
 
@@ -898,6 +999,8 @@
 
 
         <div class="research">
+
+            <!-- ONGOING RESEARCH CARD -->
 
             <div class="research-card">
 
@@ -929,6 +1032,8 @@
             </div>
 
 
+            <!-- RESEARCH INTERESTS TAGS -->
+
             <h3 style="color: #cbd5e1; margin-bottom: 18px; font-size: 18px; text-align: center;">
                 Research Interests
             </h3>
@@ -957,6 +1062,8 @@
 
     </section>
 
+
+    <!-- EDUCATION -->
 
     <section id="education">
 
@@ -1003,6 +1110,8 @@
 
     </section>
 
+
+    <!-- CONTACT -->
 
     <section id="contact">
 
@@ -1052,6 +1161,8 @@
             </div>
 
 
+            <!-- MESSAGE FORM -->
+
             <form
                 action="https://formspree.io/f/mppaevzg"
                 method="POST"
@@ -1086,6 +1197,8 @@
 
     </section>
 
+
+    <!-- FOOTER -->
 
     <footer>
 
