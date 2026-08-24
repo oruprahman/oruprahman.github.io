@@ -74,11 +74,32 @@
 
             text-align: center;
 
-            padding: 100px 20px 50px;
+            padding: 110px 20px 50px;
         }
 
         .hero-content {
             max-width: 850px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-img-box {
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #38bdf8;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
         }
 
         .hero h1 {
@@ -413,7 +434,7 @@
             padding: 13px 15px;
             margin-bottom: 15px;
             border-radius: 8px;
-            border: 1px solid #334155;
+            border: 1px solid #3334155;
             background: #0a0f1c;
             color: #e5e7eb;
             font-family: Arial, sans-serif;
@@ -535,6 +556,11 @@
     <section class="hero" id="home">
 
         <div class="hero-content">
+
+            <!-- PROFILE IMAGE FROM DRIVE -->
+            <div class="profile-img-box">
+                <img src="https://lh3.googleusercontent.com/d/1qnJmwgfK2QXchjCsqTmXuQ6RX-MMxghY" alt="Arup Rahman" class="profile-img">
+            </div>
 
             <h1>
                 I'm <span>Arup Rahman</span>
