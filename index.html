@@ -528,6 +528,13 @@
             transform: translateY(-3px);
         }
 
+        .resume-note {
+            margin-top: 15px;
+            font-size: 13.5px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
         /* FOOTER */
 
         footer {
@@ -661,11 +668,11 @@
                     LinkedIn
                 </a>
 
+                <!-- CHANGED TO REQUEST RESUME -->
                 <a
-                    href="resume.pdf"
-                    target="_blank"
+                    href="#contact"
                     class="btn secondary">
-                    Resume
+                    Request Resume
                 </a>
 
             </div>
@@ -1276,7 +1283,7 @@
 
                 <textarea
                     name="message"
-                    placeholder="Write your message..."
+                    placeholder="Write your message... (e.g., Request for Resume / Collaboration)"
                     required></textarea>
 
                 <button
@@ -1284,6 +1291,10 @@
                     class="message-btn">
                     Send Message
                 </button>
+
+                <p class="resume-note">
+                    🔒 Note: To protect personal privacy, my updated Resume/CV is shared directly upon request.
+                </p>
 
             </form>
 
