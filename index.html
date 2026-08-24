@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -259,6 +258,20 @@
             font-size: 14px;
         }
 
+        /* GITHUB PROJECT LINK */
+
+        .project-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #38bdf8;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
         /* RESEARCH */
 
         .research {
@@ -334,6 +347,55 @@
         .contact-link:hover {
             border-color: #38bdf8;
             color: #38bdf8;
+            transform: translateY(-3px);
+        }
+
+        /* MESSAGE FORM */
+
+        .message-form {
+            max-width: 650px;
+            margin: 30px auto 0;
+            text-align: left;
+        }
+
+        .message-form input,
+        .message-form textarea {
+            width: 100%;
+            padding: 13px 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background: #0a0f1c;
+            color: #e5e7eb;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .message-form input:focus,
+        .message-form textarea:focus {
+            border-color: #38bdf8;
+        }
+
+        .message-form textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .message-btn {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #38bdf8;
+            color: #07111f;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .message-btn:hover {
             transform: translateY(-3px);
         }
 
@@ -710,6 +772,13 @@
                     C++ • Software Development
                 </div>
 
+                <a
+                    href="https://github.com/oruprahman/hospital-appointment-management-system"
+                    target="_blank"
+                    class="project-link">
+                    View on GitHub →
+                </a>
+
             </div>
 
 
@@ -904,6 +973,39 @@
 
             </div>
 
+
+            <!-- MESSAGE FORM -->
+
+            <form
+                action="https://formspree.io/f/mppaevzg"
+                method="POST"
+                class="message-form">
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    required>
+
+                <textarea
+                    name="message"
+                    placeholder="Write your message..."
+                    required></textarea>
+
+                <button
+                    type="submit"
+                    class="message-btn">
+                    Send Message
+                </button>
+
+            </form>
+
         </div>
 
     </section>
@@ -920,6 +1022,4 @@
     </footer>
 
 </body>
-
 </html>
-```
