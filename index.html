@@ -270,12 +270,43 @@
             border: 1px solid #1e293b;
             border-radius: 15px;
             padding: 40px;
-            text-align: center;
         }
 
-        .research p {
+        .research-card {
+            text-align: left;
+            background: #0a0f1c;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #1e293b;
+            margin-bottom: 35px;
+        }
+
+        .research-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .research-badge {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .research-list {
             color: #94a3b8;
-            margin-bottom: 25px;
+            padding-left: 20px;
+            font-size: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .interests {
@@ -850,11 +881,11 @@
         <div class="section-title">
 
             <h2>
-                Research <span>Interests</span>
+                Research <span>& Ongoing Work</span>
             </h2>
 
             <p>
-                Areas I am interested in
+                My current academic research and areas of focus
             </p>
 
         </div>
@@ -862,28 +893,60 @@
 
         <div class="research">
 
-            <p>
-                I am interested in exploring technical problems through
-                research and developing practical solutions using
-                computing and technology.
-            </p>
+            <!-- ONGOING RESEARCH CARD -->
+
+            <div class="research-card">
+
+                <div class="research-header">
+                    <h3 style="color: #38bdf8; font-size: 22px;">
+                        Mathematical Modeling of Measles in Dhaka, Bangladesh
+                    </h3>
+                    <span class="research-badge">
+                        Ongoing Research
+                    </span>
+                </div>
+
+                <p style="color: #cbd5e1; font-weight: 500; margin-bottom: 18px; font-size: 15px;">
+                    Under the supervision of <strong style="color: #e5e7eb;">Ali Ahmed</strong>, Lecturer, Department of CSE, Northern University Bangladesh
+                </p>
+
+                <ul class="research-list">
+                    <li>
+                        Reviewed 20+ research papers on measles outbreaks, transmission dynamics, and mathematical modeling.
+                    </li>
+                    <li>
+                        Currently searching for and collecting relevant datasets for the research.
+                    </li>
+                    <li>
+                        Exploring the SIR (Susceptible–Infected–Recovered) model to develop a mathematical framework for analyzing measles transmission dynamics in Dhaka.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <!-- RESEARCH INTERESTS TAGS -->
+
+            <h3 style="color: #cbd5e1; margin-bottom: 18px; font-size: 18px; text-align: center;">
+                Research Interests
+            </h3>
 
             <div class="interests">
 
                 <span class="interest">
-                    Cybersecurity
+                    Mathematical Modeling
+                </span>
+
+                <span class="interest">
+                    Epidemiology & Data Analysis
+                </span>
+
+                <span class="interest">
+                    Machine Learning
                 </span>
 
                 <span class="interest">
                     Software Engineering
-                </span>
-
-                <span class="interest">
-                    Research
-                </span>
-
-                <span class="interest">
-                    Technology
                 </span>
 
             </div>
