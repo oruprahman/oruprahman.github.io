@@ -444,6 +444,24 @@
             border: 1px solid var(--primary-accent);
         }
 
+        .coursework-title {
+            color: var(--primary-accent);
+            font-size: 15px;
+            margin-bottom: 12px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .course-group {
+            margin-bottom: 12px;
+        }
+
+        .course-group h5 {
+            color: var(--text-main);
+            font-size: 13.5px;
+            margin-bottom: 6px;
+        }
+
         /* CONTACT */
 
         .contact {
@@ -1150,7 +1168,7 @@
             </h2>
 
             <p>
-                Academic background and qualifications
+                Academic background and completed coursework
             </p>
 
         </div>
@@ -1178,6 +1196,51 @@
                     <span class="edu-badge">
                         October 2024 – Present
                     </span>
+                </div>
+
+            </div>
+
+            <!-- COMPLETED RELEVANT COURSEWORK -->
+
+            <div style="margin-top: 25px; border-top: 1px dashed var(--border-color); padding-top: 20px;">
+
+                <div class="coursework-title">
+                    📚 Relevant Completed Coursework
+                </div>
+
+                <!-- COMPUTER SCIENCE & PROGRAMMING -->
+                <div class="course-group">
+                    <h5>Computer Science & Programming:</h5>
+                    <div class="tags">
+                        <span class="tag">Structured Programming Language (C)</span>
+                        <span class="tag">Object-Oriented Programming (C++)</span>
+                        <span class="tag">Data Structures</span>
+                        <span class="tag">Software Development</span>
+                        <span class="tag">Database Management System (DBMS)</span>
+                    </div>
+                </div>
+
+                <!-- HARDWARE & ELECTRONICS -->
+                <div class="course-group">
+                    <h5>Hardware & Electronics:</h5>
+                    <div class="tags">
+                        <span class="tag">Electrical Engineering & Circuit Analysis</span>
+                        <span class="tag">Electronic Engineering</span>
+                        <span class="tag">Digital Logic Design</span>
+                        <span class="tag">Digital Electronics & Pulse Technique</span>
+                    </div>
+                </div>
+
+                <!-- MATHEMATICS & ANALYTICAL -->
+                <div class="course-group">
+                    <h5>Mathematics & Analytical Foundation:</h5>
+                    <div class="tags">
+                        <span class="tag">Discrete Mathematics</span>
+                        <span class="tag">Differential & Integral Calculus</span>
+                        <span class="tag">Differential Equations & Fourier Analysis</span>
+                        <span class="tag">Matrices, Vectors & Coordinate Geometry</span>
+                        <span class="tag">Complex Variables & Laplace Transformation</span>
+                    </div>
                 </div>
 
             </div>
@@ -1291,19 +1354,21 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        // LIGHT / DARK MODE TOGGLE
+        // LIGHT / DARK MODE TOGGLE (DEFAULT: DARK MODE)
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const themeText = document.getElementById('theme-text');
 
         const currentTheme = localStorage.getItem('theme');
 
+        // FORCE DEFAULT DARK MODE UNLESS USER EXPLICITLY SAVED LIGHT MODE
         if (currentTheme === 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
             themeIcon.textContent = '☀️';
             themeText.textContent = 'Light';
         } else {
             document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
             themeIcon.textContent = '🌙';
             themeText.textContent = 'Dark';
         }
